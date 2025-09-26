@@ -137,13 +137,24 @@ const experiences: Experience[] = [
     },
 ];
 
+function when(cond: boolean): { inject: (html: string) => string } {
+    return {
+        inject(html) {
+            if (cond) {
+                return html;
+            }
+            return "";
+        },
+    };
+}
+
 const experiencesContainer = document.querySelector(
     ".experiences"
 ) as HTMLElement;
 
 experiences.forEach((experience) => {
     const div = document.createElement("div");
-    div.classList.add("experience--card")
+    div.classList.add("experience--card");
     div.innerHTML = `
         <img
             src=${experience.imgSrc}
@@ -151,21 +162,15 @@ experiences.forEach((experience) => {
         />
         <div class="content">
             <div class="offers">
-                ${
-                    experience.offers.hasWine
-                        ? '<i class="fa-solid fa-wine-glass-empty"></i>'
-                        : ""
-                }
-                ${
-                    experience.offers.hasFood
-                        ? '<i class="fa-solid fa-utensils"></i>'
-                        : ""
-                }
-                ${
-                    experience.offers.hasNature
-                        ? '<i class="fa-solid fa-leaf"></i>'
-                        : ""
-                }
+                ${when(experience.offers.hasWine).inject(
+                    '<i class="fa-solid fa-wine-glass-empty"></i>'
+                )}
+                ${when(experience.offers.hasFood).inject(
+                    '<i class="fa-solid fa-utensils"></i>'
+                )}
+                ${when(experience.offers.hasNature).inject(
+                    '<i class="fa-solid fa-leaf"></i>'
+                )}
                     <i class="fa-solid fa-clock"></i><span>${
                         experience.timeAmount
                     }\'</span>
