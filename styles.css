@@ -29,11 +29,39 @@ body {
     letter-spacing: 0.05rem;
 }
 
-.navbar--section .menu {
+.navbar--section .dropdown-menu {
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    position: relative; /* used for dropdown */
+}
+
+.dropdown-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown-menu .dropdown {
+    list-style: none;
+    display: none;
+    position:absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;    /* don't wrap text */
+    background-color: white;
+}
+
+.dropdown-menu .dropdown .item {
+    padding: 0.5rem;
+}
+
+.dropdown-menu .dropdown .item:hover {
+    background-color: var(--secondary-light)
+}
+
+nav .language-icon {
+    height: 1rem;
+    margin-right: 0.5rem;
 }
 
 main {
