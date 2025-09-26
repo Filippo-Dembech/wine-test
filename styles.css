@@ -16,6 +16,36 @@ body {
     margin: auto;
 }
 
+.collapsable-navbar .navbar-toggler {
+    cursor: pointer;
+}
+
+.collapsable-navbar nav {
+    border: 3px solid black;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: -1000px; /* hide offscreen */
+    height: 100%;
+    background-color: white;
+    transition: left 0.3s ease;
+    padding: 1.5rem;
+}
+
+.collapsable-navbar nav.active {
+    left: 0
+}
+
+.collapsable-navbar .items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.collapsable-navbar .dropdown {
+    border: 2px solid black;
+}
+
 .expanded-navbar {
     display: flex;
     align-items: center;
@@ -31,33 +61,29 @@ body {
     letter-spacing: 0.05rem;
 }
 
-.expanded-navbar--section .dropdown-menu {
+.dropdown-menu {
     display: flex;
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    position: relative; /* used for dropdown */
+    position: relative; /* used for dropdown absolute positioning */
 }
 
-/* .expanded-navbar .dropdown-menu:hover .dropdown {
-    display: block;
-} */
-
-.expanded-navbar .dropdown-menu .dropdown {
+.dropdown-menu .dropdown {
     list-style: none;
     display: none;
     position:absolute;
     top: 100%;
     left: 0;
-    white-space: nowrap;    /* don't wrap text */
+    white-space: nowrap;    /* don't wrap text if long */
     background-color: white;
 }
 
-.expanded-navbar .dropdown-menu .dropdown .item {
+.dropdown-menu .dropdown .item {
     padding: 0.5rem;
 }
 
-.expanded-navbar .dropdown-menu .dropdown .item:hover {
+.dropdown-menu .dropdown .item:hover {
     background-color: var(--secondary-light)
 }
 
@@ -91,11 +117,6 @@ main .experiences {
     perspective: 1000px;
 }
 
-@media (min-width: 1024px) { /* laptop */
-    main .experiences {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
 main .experience--card {
     background-color: white;
@@ -173,4 +194,24 @@ main .experience--card .details {
     padding: 0.5rem 1rem;
     margin-top: auto;
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .collapsable-navbar {
+        padding: 1.5rem;
+    }
+
+    .expanded-navbar {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) { /* laptop */
+    main .experiences {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .collapsable-navbar {
+        display: none
+    }
 }

@@ -212,3 +212,17 @@ dropdownMenus.forEach(dropdownMenu => {
         }
     })
 })
+
+const navbarToggler = document.querySelector(".navbar-toggler");
+const collapsableNavbar = document.querySelector(".collapsable-navbar nav");
+
+navbarToggler?.addEventListener("click", () => {
+    collapsableNavbar?.classList.toggle("active")
+})
+
+document.addEventListener('click', (e) => {
+  if (!collapsableNavbar?.contains(e.target as Node) && !navbarToggler?.contains(e.target as Node)) {
+    collapsableNavbar?.classList.remove('active');
+  }
+});
+

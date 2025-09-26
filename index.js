@@ -144,3 +144,14 @@ dropdownMenus.forEach(function (dropdownMenu) {
         }
     });
 });
+var navbarToggler = document.querySelector(".navbar-toggler");
+var collapsableNavbar = document.querySelector(".collapsable-navbar nav");
+navbarToggler === null || navbarToggler === void 0 ? void 0 : navbarToggler.addEventListener("click", function () {
+    collapsableNavbar === null || collapsableNavbar === void 0 ? void 0 : collapsableNavbar.classList.toggle("active");
+});
+document.addEventListener('click', function (e) {
+    // If click is outside navbar AND toggle button
+    if (!(collapsableNavbar === null || collapsableNavbar === void 0 ? void 0 : collapsableNavbar.contains(e.target)) && !(navbarToggler === null || navbarToggler === void 0 ? void 0 : navbarToggler.contains(e.target))) {
+        collapsableNavbar === null || collapsableNavbar === void 0 ? void 0 : collapsableNavbar.classList.remove('active');
+    }
+});
