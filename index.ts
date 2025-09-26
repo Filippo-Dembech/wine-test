@@ -1,4 +1,5 @@
 type Experience = {
+    imgSrc: string,
     title: string;
     offers: {
         hasWine: boolean,
@@ -16,6 +17,7 @@ type Experience = {
 
 const experiences: Experience[] = [
     {
+        imgSrc: "static/experience_1.png",
         offers: {
             hasWine: true,
             hasFood: false,
@@ -31,6 +33,7 @@ const experiences: Experience[] = [
         }
     },
     {
+        imgSrc: "static/experience_2.png",
         offers: {
             hasWine: true,
             hasFood: true,
@@ -46,6 +49,7 @@ const experiences: Experience[] = [
         }
     },
     {
+        imgSrc: "static/experience_3.png",
         offers: {
             hasWine: true,
             hasFood: false,
@@ -61,6 +65,7 @@ const experiences: Experience[] = [
         }
     },
     {
+        imgSrc: "static/experience_4.png",
         offers: {
             hasWine: true,
             hasFood: true,
@@ -76,6 +81,7 @@ const experiences: Experience[] = [
         }
     },
     {
+        imgSrc: "static/experience_5.png",
         offers: {
             hasWine: true,
             hasFood: true,
@@ -91,6 +97,7 @@ const experiences: Experience[] = [
         }
     },
     {
+        imgSrc: "static/experience_6.png",
         offers: {
             hasWine: true,
             hasFood: true,
@@ -106,6 +113,7 @@ const experiences: Experience[] = [
         }
     },
     {
+        imgSrc: "static/experience_7.png",
         offers: {
             hasWine: true,
             hasFood: true,
@@ -121,3 +129,4 @@ const experiences: Experience[] = [
         }
     },
 ]
+
