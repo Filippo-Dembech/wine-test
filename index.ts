@@ -143,55 +143,54 @@ const experiencesContainer = document.querySelector(
 
 experiences.forEach((experience) => {
     const div = document.createElement("div");
+    div.classList.add("experience--card")
     div.innerHTML = `
-                <div class="experience--card">
-                    <img
-                        src=${experience.imgSrc}
-                        alt="experience-img"
-                    />
-                    <div class="content">
-                        <div class="offers">
-                            ${
-                                experience.offers.hasWine
-                                    ? '<i class="fa-solid fa-wine-glass-empty"></i>'
-                                    : ""
-                            }
-                            ${
-                                experience.offers.hasFood
-                                    ? '<i class="fa-solid fa-utensils"></i>'
-                                    : ""
-                            }
-                            ${
-                                experience.offers.hasNature
-                                    ? '<i class="fa-solid fa-leaf"></i>'
-                                    : ""
-                            }
-                                <i class="fa-solid fa-clock"></i><span>${
-                                    experience.timeAmount
-                                }\'</span>
-                        </div>
-                        <h3 class="title">${experience.title}</h3>
-                        <hr />
-                        <p class="description">${experience.description}</p>
-                        <div>
-                            <span class="price">prezzo</span>
-                            <div class="amount-section">
-                                ${
-                                    experience.price.isFixed
-                                        ? `<span class="amount">€${experience.price.amount} a persona</span>`
-                                        : `<span class="amount">A partire da €${experience.price.amount}</span>`
-                                }
-                                ${
-                                    experience.price.isIvaIncluded &&
-                                    '<div class="iva">IVA INCLUSA</div>'
-                                }
-                            </div>
-                            <div class="details">
-                                Dettagli <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
+        <img
+            src=${experience.imgSrc}
+            alt="experience-img"
+        />
+        <div class="content">
+            <div class="offers">
+                ${
+                    experience.offers.hasWine
+                        ? '<i class="fa-solid fa-wine-glass-empty"></i>'
+                        : ""
+                }
+                ${
+                    experience.offers.hasFood
+                        ? '<i class="fa-solid fa-utensils"></i>'
+                        : ""
+                }
+                ${
+                    experience.offers.hasNature
+                        ? '<i class="fa-solid fa-leaf"></i>'
+                        : ""
+                }
+                    <i class="fa-solid fa-clock"></i><span>${
+                        experience.timeAmount
+                    }\'</span>
+            </div>
+            <h3 class="title">${experience.title}</h3>
+            <hr />
+            <p class="description">${experience.description}</p>
+            <div class="price">
+                <span class="price-label">prezzo</span>
+                <div class="amount-section">
+                    ${
+                        experience.price.isFixed
+                            ? `<span class="amount">€${experience.price.amount} a persona</span>`
+                            : `<span class="amount">A partire da €${experience.price.amount}</span>`
+                    }
+                    ${
+                        experience.price.isIvaIncluded &&
+                        '<div class="iva">IVA INCLUSA</div>'
+                    }
                 </div>
+            </div>
+            <div class="details">
+                Dettagli <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
     `;
     experiencesContainer.appendChild(div);
 });

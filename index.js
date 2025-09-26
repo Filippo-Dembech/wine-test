@@ -115,15 +115,16 @@ var experiences = [
 var experiencesContainer = document.querySelector(".experiences");
 experiences.forEach(function (experience) {
     var div = document.createElement("div");
-    div.innerHTML = "\n                <div class=\"experience--card\">\n                    <img\n                        src=".concat(experience.imgSrc, "\n                        alt=\"experience-img\"\n                    />\n                    <div class=\"content\">\n                        <div class=\"offers\">\n                            ").concat(experience.offers.hasWine
+    div.classList.add("experience--card");
+    div.innerHTML = "\n                    <img\n                        src=".concat(experience.imgSrc, "\n                        alt=\"experience-img\"\n                    />\n                    <div class=\"content\">\n                        <div class=\"offers\">\n                            ").concat(experience.offers.hasWine
         ? '<i class="fa-solid fa-wine-glass-empty"></i>'
         : "", "\n                            ").concat(experience.offers.hasFood
         ? '<i class="fa-solid fa-utensils"></i>'
         : "", "\n                            ").concat(experience.offers.hasNature
         ? '<i class="fa-solid fa-leaf"></i>'
-        : "", "\n                                <i class=\"fa-solid fa-clock\"></i><span>").concat(experience.timeAmount, "'</span>\n                        </div>\n                        <h3 class=\"title\">").concat(experience.title, "</h3>\n                        <hr />\n                        <p class=\"description\">").concat(experience.description, "</p>\n                        <div>\n                            <span class=\"price\">prezzo</span>\n                            <div class=\"amount-section\">\n                                ").concat(experience.price.isFixed
+        : "", "\n                                <i class=\"fa-solid fa-clock\"></i><span>").concat(experience.timeAmount, "'</span>\n                        </div>\n                        <h3 class=\"title\">").concat(experience.title, "</h3>\n                        <hr />\n                        <p class=\"description\">").concat(experience.description, "</p>\n                        <div class=\"price\">\n                            <span class=\"price-label\">prezzo</span>\n                            <div class=\"amount-section\">\n                                ").concat(experience.price.isFixed
         ? "<span class=\"amount\">\u20AC".concat(experience.price.amount, " a persona</span>")
         : "<span class=\"amount\">A partire da \u20AC".concat(experience.price.amount, "</span>"), "\n                                ").concat(experience.price.isIvaIncluded &&
-        '<div class="iva">IVA INCLUSA</div>', "\n                            </div>\n                            <div class=\"details\">\n                                Dettagli <i class=\"fa-solid fa-arrow-right\"></i>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n    ");
+        '<div class="iva">IVA INCLUSA</div>', "\n                            </div>\n                        </div>\n                        <div class=\"details\">\n                            Dettagli <i class=\"fa-solid fa-arrow-right\"></i>\n                        </div>\n                    </div>\n    ");
     experiencesContainer.appendChild(div);
 });
