@@ -16,6 +16,12 @@ body {
     margin: auto;
 }
 
+.collapsable-navbar {
+    display: flex;
+    align-items: center;
+    justify-content:  space-between;
+}
+
 .collapsable-navbar .navbar-toggler {
     cursor: pointer;
 }
