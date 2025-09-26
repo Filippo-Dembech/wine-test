@@ -132,3 +132,15 @@ experiences.forEach(function (experience) {
         '<div class="iva">IVA INCLUSA</div>', "\n                </div>\n            </div>\n            <div class=\"details\">\n                Dettagli <i class=\"fa-solid fa-arrow-right\"></i>\n            </div>\n        </div>\n    ");
     experiencesContainer.appendChild(div);
 });
+var dropdownMenus = document.querySelectorAll(".dropdown-menu");
+dropdownMenus.forEach(function (dropdownMenu) {
+    dropdownMenu.addEventListener("click", function () {
+        var dropdown = dropdownMenu.querySelector(".dropdown");
+        if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+        }
+        else {
+            dropdown.style.display = 'block';
+        }
+    });
+});

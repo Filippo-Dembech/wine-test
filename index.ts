@@ -199,3 +199,16 @@ experiences.forEach((experience) => {
     `;
     experiencesContainer.appendChild(div);
 });
+
+const dropdownMenus = document.querySelectorAll(".dropdown-menu");
+
+dropdownMenus.forEach(dropdownMenu => {
+    dropdownMenu.addEventListener("click", () => {
+        const dropdown = dropdownMenu.querySelector(".dropdown") as HTMLDivElement;
+        if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+        } else {
+            dropdown.style.display = 'block';
+        }
+    })
+})

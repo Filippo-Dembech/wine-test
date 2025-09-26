@@ -17,8 +17,14 @@
         <title>Wine Test</title>
     </head>
     <body>
-        <nav class="navbar">
-            <div class="navbar--section">
+        <nav class="collapsable-navbar">
+            <span class="navbar-toggler"><i class="fa-solid fa-bars"></i></span>
+            <ul>
+                <li>identità</li>
+            </ul>
+        </nav>
+        <nav class="expanded-navbar">
+            <div class="expanded-navbar--section">
                 <span class="dropdown-menu">
                     <span>identità <i class="fa-solid fa-caret-down"></i></span>
                     <ul class="dropdown">
@@ -33,12 +39,12 @@
                 <span>devin cosmetica</span>
             </div>
             <img
-                class="navbar--section logo"
+                class="expanded-navbar--section logo"
                 src="static/google.png"
                 alt="google-logo"
                 height="70"
             />
-            <div class="navbar--section">
+            <div class="expanded-navbar--section">
                 <span>esperienza</span>
                 <span>gift card</span>
                 <span>store locator</span>
