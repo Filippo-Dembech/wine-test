@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary: rgb(244, 243, 237)
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -16,10 +24,27 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    letter-spacing: 0.05rem;
 }
 
 .navbar--section .menu {
     display: flex;
+    align-items: center;
     gap: 5px;
     cursor: pointer;
+}
+
+main {
+    background-color: var(--primary);
+    padding: 8rem 2rem;
+}
+
+main .header {
+    text-align: center;
+}
+
+main .header h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 100;
 }
