@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: 1rem 3rem 0rem;
+}
+
+.navbar--section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar--section .menu {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
